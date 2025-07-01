@@ -79,5 +79,16 @@ npm run deploy
 - If site doesn't load: Check that base URL in vite.config.ts matches repository name
 - If images don't show: Make sure all image paths are relative
 - If deployment fails: Check that you have push permissions to the repository
+- **If you get 404 "Page Not Found"**: This has been fixed with a 404.html redirect file that handles React Router routing on GitHub Pages
+
+## ✅ FIXED: React Router + GitHub Pages Issue
+Your portfolio now includes:
+- `public/404.html` - Redirects all routes to your React app
+- Updated `index.html` - Handles the redirected URLs properly
+- Correct base URL configuration for your repository name
+
+Your portfolio should now work at: **https://Vihanga13.github.io/porfolio/**
+
+Note: It may take 5-10 minutes for GitHub Pages to update after deployment.
 
 That's it! Your portfolio will be live and accessible worldwide! 🚀
