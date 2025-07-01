@@ -133,13 +133,21 @@ export default function Portfolio() {
     }
     setMobileMenuOpen(false);
   };    const downloadCV = () => {
-    // Create a link to download the CV
+    // Create a link to download the CV with correct GitHub Pages path
     const link = document.createElement('a');
-    link.href = '/attached_assets/VIHANGA NILUSHA - CV.pdf';
-    link.download = 'Vihanga_Nilusha_CV.pdf';
+    // Use the base path from vite config for GitHub Pages
+    link.href = `${import.meta.env.BASE_URL}Vihanga_Nilusha_CV.txt`;
+    link.download = 'Vihanga_Nilusha_CV.txt';
+    link.target = '_blank'; // Open in new tab as fallback
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    // Show toast notification
+    toast({
+      title: "CV Download",
+      description: "CV download started. Please replace with your actual PDF CV.",
+    });
   };
 
   return (
