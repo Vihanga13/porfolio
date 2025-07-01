@@ -146,7 +146,7 @@ export default function Portfolio() {
     // Show toast notification
     toast({
       title: "CV Download",
-      description: "CV download started. Please replace with your actual PDF CV.",
+      description: "CV text file downloaded. Please add your actual PDF CV to replace this placeholder.",
     });
   };
 
