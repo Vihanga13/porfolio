@@ -2,24 +2,49 @@
 
 ## Quick Steps:
 
-### 1. **Add your PDF CV to the project:**
-   - Place your CV file in the `public` folder
-   - Name it something like: `Vihanga_Nilusha_CV.pdf`
+### 1. **Create a Real PDF CV:**
+   
+   **Option A: Use Word/Google Docs**
+   - Copy the content from `public/Vihanga_Nilusha_CV.txt`
+   - Paste into Microsoft Word or Google Docs
+   - Format it nicely (add sections, bold headings, etc.)
+   - Save/Download as PDF
+   
+   **Option B: Use Online CV Builder**
+   - Use Canva, Resume.com, or similar
+   - Create a professional CV
+   - Download as PDF
 
-### 2. **Update the download function:**
-   Open `src/pages/portfolio.tsx` and update the CV filename:
+### 2. **Replace the placeholder file:**
+   - Delete: `public/Vihanga_Nilusha_CV.txt`
+   - Add your PDF: `public/Vihanga_Nilusha_CV.pdf`
+
+### 3. **Update the download function:**
+   In `src/pages/portfolio.tsx`, change:
    ```typescript
+   // FROM:
+   link.href = `${import.meta.env.BASE_URL}Vihanga_Nilusha_CV.txt`;
+   link.download = 'Vihanga_Nilusha_CV.txt';
+   
+   // TO:
    link.href = `${import.meta.env.BASE_URL}Vihanga_Nilusha_CV.pdf`;
    link.download = 'Vihanga_Nilusha_CV.pdf';
    ```
 
-### 3. **Redeploy:**
+### 4. **Redeploy:**
    ```bash
    git add .
-   git commit -m "Add real CV file"
+   git commit -m "Add real PDF CV"
    git push origin main
    npm run deploy
    ```
+
+## 🚀 **Quick Test (Current Status):**
+Your CV download should work now with the text file. The URL should be:
+`https://Vihanga13.github.io/porfolio/Vihanga_Nilusha_CV.txt`
+
+## ⚡ **Pro Tip:**
+Create a professional-looking PDF CV to make a better impression on potential employers!
 
 ## Current Status:
 - ✅ Download function is now fixed for GitHub Pages
