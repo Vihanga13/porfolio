@@ -136,8 +136,8 @@ export default function Portfolio() {
     // Create a link to download the CV with correct GitHub Pages path
     const link = document.createElement('a');
     // Use the base path from vite config for GitHub Pages
-    link.href = `${import.meta.env.BASE_URL}Vihanga_Nilusha_CV.txt`;
-    link.download = 'Vihanga_Nilusha_CV.txt';
+    link.href = `${import.meta.env.BASE_URL}VIHANGA NILUSHA - CV.pdf`;
+    link.download = 'VIHANGA_NILUSHA_CV.pdf';
     link.target = '_blank'; // Open in new tab as fallback
     document.body.appendChild(link);
     link.click();
@@ -146,7 +146,7 @@ export default function Portfolio() {
     // Show toast notification
     toast({
       title: "CV Download",
-      description: "CV downloaded successfully!",
+      description: "PDF CV downloaded successfully!",
     });
   };
 
