@@ -3,20 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <base href="/" />
+    <base href="/porfolio/" />
     <link rel="icon" type="image" href="assets/logo.png" sizes="32x32">
     <title>Vihanga Nilusha</title>
     <script>
-      (function() {
-        const { pathname } = window.location;
-        if (pathname.startsWith('/Nw-portfolio')) {
-          const withoutBase = pathname.replace('/Nw-portfolio', '');
-          if (withoutBase && withoutBase !== '/') {
-            sessionStorage.setItem('redirectPath', withoutBase);
-            window.location.href = '/Nw-portfolio/';
-          }
+      // Single Page Apps for GitHub Pages
+      // Start GitHub Pages SPA redirect handler
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
         }
-      })();
+      }(window.location))
     </script>
   </head>
   <body>
