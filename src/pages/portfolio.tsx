@@ -59,7 +59,8 @@ const iconMap = {
   Medal,
   Flask: FlaskRound,
   Cross,
-  Target
+  Target,
+  Code
 };
 
 const fadeInUp = {

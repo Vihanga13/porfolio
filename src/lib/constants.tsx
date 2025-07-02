@@ -1,6 +1,6 @@
 export const PERSONAL_INFO = {
   name: "Vihanga Nilusha",
-  title: "Computer Science Undergraduate",
+  title: "Junior Web Developer",
   email: "vihaax23@gmail.com",
   phone: "+94 712 547 892",
   location: "Moratuwa, Sri Lanka",
@@ -11,9 +11,9 @@ export const PERSONAL_INFO = {
 };
 
 export const ABOUT_TEXT = {
-  intro: "I am a passionate and dedicated computer science student with hands-on experience in web development, UI design, front-end development, and mobile application development. With a solid foundation in programming languages and frameworks such as HTML, CSS, JavaScript, React Native, Flutter, and Flask, Node.js.",
-  journey: "I am excited to apply my knowledge to real-world projects. I am eager to contribute to dynamic teams, learn from seasoned experts, and expand my knowledge in developing creative digital solutions.",
-  goal: "Currently looking for an internship opportunity to broaden my knowledge and contribute to meaningful initiatives in the tech sector."
+  intro: "I am a passionate and dedicated Junior Web Developer with hands-on experience in web development, UI design, front-end development, and mobile application development. Currently working at Altitude1 (PVT) LTD, where I contribute to building meaningful web experiences and impactful projects.",
+  journey: "With a solid foundation in programming languages and frameworks such as HTML, CSS, JavaScript, React Native, Flutter, Flask, and Node.js, I am excited to apply my knowledge to real-world projects and continue growing as a developer.",
+  goal: "I am eager to contribute to dynamic teams, learn from seasoned experts, and expand my knowledge in developing innovative digital solutions while pursuing my Computer Science degree."
 };
 
 export const PROJECTS = [
@@ -164,6 +164,14 @@ export const EDUCATION = [
 export const EXPERIENCE = [
   {
     id: 1,
+    title: "Junior Web Developer",
+    organization: "Altitude1 (PVT) LTD",
+    period: "2025 - Present",
+    description: "Building meaningful web experiences and contributing to impactful projects as part of Prime One Global. Focusing on enhancing skills in modern web development technologies and collaborating with an amazing team.",
+    icon: "Code"
+  },
+  {
+    id: 2,
     title: "Senior Prefect",
     organization: "Prince Of Wales' College",
     period: "2021",
@@ -171,7 +179,7 @@ export const EXPERIENCE = [
     icon: "Medal"
   },
   {
-    id: 2,
+    id: 3,
     title: "Vice President - Science Society", 
     organization: "Prince Of Wales' College",
     period: "2021",
@@ -179,7 +187,7 @@ export const EXPERIENCE = [
     icon: "Flask"
   },
   {
-    id: 3,
+    id: 4,
     title: "President - Christian Society",
     organization: "Prince Of Wales' College",
     period: "2020-2021", 
@@ -187,7 +195,7 @@ export const EXPERIENCE = [
     icon: "Cross"
   },
   {
-    id: 4,
+    id: 5,
     title: "Cricket Team Member",
     organization: "Prince Of Wales' College",
     period: "U13, U15, U17",
