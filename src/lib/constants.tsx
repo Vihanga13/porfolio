@@ -166,8 +166,8 @@ export const EXPERIENCE = [
     id: 1,
     title: "Junior Web Developer",
     organization: "Altitude1 (PVT) LTD",
-    period: "2025 - Present",
-    description: "Building meaningful web experiences and contributing to impactful projects as part of Prime One Global. Focusing on enhancing skills in modern web development technologies and collaborating with an amazing team.",
+    period: "June 2025 - Present",
+    description: "🚀 Currently building meaningful web experiences and contributing to impactful projects as part of Prime One Global. Focusing on enhancing skills in modern web development technologies and collaborating with an amazing team. Excited to be part of this innovative company!",
     icon: "Code"
   },
   {
