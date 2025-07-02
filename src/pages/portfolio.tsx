@@ -260,6 +260,15 @@ export default function Portfolio() {
               Hi, I'm <span className="gradient-text">{PERSONAL_INFO.name}</span>
             </motion.h1>
             
+            <motion.div 
+              variants={fadeInUp}
+              className="flex justify-center mb-6"
+            >
+              <Badge className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-4 py-2 text-sm font-medium animate-pulse">
+                🎉 Now Working at Altitude1 (PVT) LTD
+              </Badge>
+            </motion.div>
+            
             <motion.p 
               variants={fadeInUp}
               className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto"
@@ -540,21 +549,47 @@ export default function Portfolio() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {EXPERIENCE.map((exp) => {
+            {EXPERIENCE.map((exp, index) => {
               const IconComponent = iconMap[exp.icon as keyof typeof iconMap];
+              const isNew = index === 0; // First item is the new role
               return (
-                <Card key={exp.id} className="glass-card border-primary/10">
+                <Card 
+                  key={exp.id} 
+                  className={`glass-card transition-all duration-300 ${
+                    isNew 
+                      ? 'border-primary/30 bg-gradient-to-r from-primary/5 to-secondary/5 shadow-lg hover:shadow-xl ring-2 ring-primary/20' 
+                      : 'border-primary/10'
+                  }`}
+                >
                   <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
-                      <IconComponent className="h-6 w-6 text-primary mr-4" />
-                      <div>
-                        <h3 className="text-xl font-semibold">{exp.title}</h3>
-                        <p className="text-muted-foreground">{exp.organization} • {exp.period}</p>
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center">
+                        <IconComponent className={`h-6 w-6 mr-4 ${isNew ? 'text-primary animate-pulse' : 'text-primary'}`} />
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <h3 className={`text-xl font-semibold ${isNew ? 'text-primary' : ''}`}>
+                              {exp.title}
+                            </h3>
+                            {isNew && (
+                              <Badge className="bg-gradient-to-r from-primary to-secondary text-primary-foreground text-xs animate-pulse">
+                                NEW
+                              </Badge>
+                            )}
+                          </div>
+                          <p className="text-muted-foreground">{exp.organization} • {exp.period}</p>
+                        </div>
                       </div>
                     </div>
                     <p className="text-muted-foreground text-sm">
                       {exp.description}
                     </p>
+                    {isNew && (
+                      <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                        <p className="text-primary text-sm font-medium">
+                          🎉 Just started this exciting journey in July 2025!
+                        </p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               );
