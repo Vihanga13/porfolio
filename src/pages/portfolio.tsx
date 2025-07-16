@@ -10,6 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Timeline } from "@/components/ui/timeline";
 import { Chatbot } from "@/components/ui/chatbot";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@/shared/schema";
@@ -153,6 +155,9 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+      
       {/* Navigation */}
       <motion.nav 
         initial={{ y: -100 }}
@@ -171,7 +176,7 @@ export default function Portfolio() {
               </div>
             </div>
             
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               <button onClick={() => scrollToSection('home')} className="hover:text-primary transition-colors duration-300">
                 Home
               </button>
@@ -190,12 +195,14 @@ export default function Portfolio() {
               <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors duration-300">
                 Contact
               </button>
+              <ThemeToggle />
             </div>
             
             <button 
-              className="md:hidden text-foreground"
+              className="md:hidden text-foreground flex items-center space-x-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
+              <ThemeToggle />
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -265,10 +272,10 @@ export default function Portfolio() {
               className="flex justify-center mb-6"
             >
               <div className="relative">
-                <Badge className="bg-gradient-to-r from-green-500 via-primary to-secondary text-white px-6 py-3 text-base font-bold animate-bounce shadow-lg ring-4 ring-primary/30">
+                <Badge className="bg-gradient-to-r from-slate-700 via-slate-600 to-gray-700 text-white px-6 py-3 text-base font-bold animate-bounce shadow-lg ring-4 ring-slate-500/20">
                   ✨ CURRENTLY WORKING AT ALTITUDE1 (PVT) LTD ✨
                 </Badge>
-                <div className="absolute -inset-1 bg-gradient-to-r from-green-400 via-primary to-secondary rounded-full blur opacity-30 animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 via-slate-500 to-gray-600 rounded-full blur opacity-20 animate-pulse"></div>
               </div>
             </motion.div>
             
@@ -276,7 +283,7 @@ export default function Portfolio() {
               variants={fadeInUp}
               className="flex justify-center mb-6"
             >
-              <Badge className="bg-green-100 text-green-800 border-2 border-green-300 px-4 py-2 text-sm font-semibold animate-pulse">
+              <Badge className="bg-slate-100 text-slate-700 border-2 border-slate-300 px-4 py-2 text-sm font-semibold animate-pulse">
                 🚀 Started in June 2025 - Fresh & Excited!
               </Badge>
             </motion.div>

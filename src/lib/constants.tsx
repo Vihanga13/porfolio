@@ -28,6 +28,24 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    title: "FITNESS TRACKER MOBILE APP",
+    type: "Solo Project",
+    description: "Cross-platform fitness tracking mobile application built with React Native. Features workout logging, progress tracking, calorie counting, and social sharing. Integrates with device sensors for step counting and heart rate monitoring, with offline data synchronization capabilities.",
+    technologies: ["React Native", "TypeScript", "Redux", "SQLite", "Firebase", "React Navigation"],
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    github: "https://github.com/Vihanga13/fitness-tracker-app"
+  },
+  {
+    id: 3,
+    title: "E-COMMERCE MOBILE APP",
+    type: "Solo Project",
+    description: "Full-featured e-commerce mobile application with product browsing, cart management, secure payment integration, and order tracking. Built with Flutter for iOS and Android, featuring responsive design, push notifications, and seamless user experience with Firebase backend.",
+    technologies: ["Flutter", "Dart", "Firebase", "Stripe API", "Provider", "Material Design"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    github: "https://github.com/Vihanga13/ecommerce-mobile-app"
+  },
+  {
+    id: 4,
     title: "MEDSYNC",
     type: "Group Project",
     description: "Medical Information Management System (MIMS) with QR code identification using PyQt5, Firebase Realtime Database, and OpenCV2 to modernize public healthcare. Through literature review and user-centered design, it enhances patient data management, workflow efficiency, and compliance.",
@@ -36,7 +54,16 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/MedSync"
   },
   {
-    id: 3,
+    id: 5,
+    title: "TASK MANAGEMENT MOBILE APP",
+    type: "Solo Project",
+    description: "Productivity mobile app for task and project management with real-time collaboration features. Built with React Native and Node.js backend, featuring drag-and-drop task boards, team messaging, file sharing, and progress analytics with clean, intuitive UI design.",
+    technologies: ["React Native", "Node.js", "MongoDB", "Socket.io", "JWT", "Express"],
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    github: "https://github.com/Vihanga13/task-management-app"
+  },
+  {
+    id: 6,
     title: "GREEN STAY",
     type: "Group Project", 
     description: "Platform tailored for NSBM students to facilitate hostel searches in Homagama. It employs HTML, CSS, and JavaScript for frontend development, PHP for backend operations, and MySQL for database management. Additionally, it integrates Google Maps API for mapping features.",
@@ -45,7 +72,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/GreenStay"
   },
   {
-    id: 4,
+    id: 7,
     title: "GREEN RIDE",
     type: "Group Project",
     description: "Transportation app for NSBM Green University that streamlines commuting by providing public transport details and facilitating carpooling. Built with Dart and Flutter, it leverages Firebase for backend services and GitHub for collaboration.",
@@ -54,7 +81,16 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/GreenRide"
   },
   {
-    id: 5,
+    id: 8,
+    title: "WEATHER MOBILE APP",
+    type: "Solo Project",
+    description: "Modern weather forecast mobile application built with Flutter, featuring beautiful animations, location-based weather data, 7-day forecasts, and weather alerts. Integrates with OpenWeatherMap API and includes offline caching for improved performance.",
+    technologies: ["Flutter", "Dart", "OpenWeatherMap API", "SQLite", "Provider", "Geolocator"],
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    github: "https://github.com/Vihanga13/Weather-Mobile-App"
+  },
+  {
+    id: 9,
     title: "CALCULATOR",
     type: "Solo Project",
     description: "Created a calculator application with complete functionality with the Tkinter framework and Python. The calculator can do brackets and percentage calculations in addition to standard arithmetic operations like addition, subtraction, multiplication, and division.",
@@ -63,7 +99,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/Calculator"
   },
   {
-    id: 6,
+    id: 10,
     title: "WEATHER APP",
     type: "Solo Project",
     description: "Using Python and the OpenWeatherMap API, an interactive weather forecast application was created that offers real-time weather information for any given area. Features include temperature, humidity, wind speed, and comprehensive weather descriptions with error handling.",
@@ -74,10 +110,10 @@ export const PROJECTS = [
 ];
 
 export const TECHNICAL_SKILLS = {
-  "Programming Languages": ["C", "C#", "Python", "JavaScript", "PHP"],
-  "Web Technologies": ["HTML", "CSS", "React", "MERN Stack", "Node.js"],
-  "Mobile Development": ["React Native", "Flutter", "Dart"],
-  "Databases & Tools": ["MySQL", "Firebase", "Figma", "PowerBI"],
+  "Programming Languages": ["C", "C#", "Python", "JavaScript", "PHP", "TypeScript", "Dart"],
+  "Web Technologies": ["HTML", "CSS", "React", "MERN Stack", "Node.js", "Express.js"],
+  "Mobile Development": ["React Native", "Flutter", "Dart", "iOS", "Android", "Cross-Platform"],
+  "Databases & Tools": ["MySQL", "Firebase", "MongoDB", "SQLite", "Figma", "PowerBI"],
   "Other Skills": ["Data Cleaning", "Data Preprocessing", "OpenCV", "PyQt5"]
 };
 
