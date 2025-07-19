@@ -208,6 +208,14 @@ export const EXPERIENCE = [
   },
   {
     id: 2,
+    title: "Senior Prefect",
+    organization: "Prince Of Wales' College",
+    period: "2021",
+    description: "Led student body initiatives, maintained discipline, and served as a bridge between students and administration. Demonstrated leadership qualities and responsibility in guiding fellow students.",
+    icon: "Medal"
+  },
+  {
+    id: 3,
     title: "Vice President - Science Society", 
     organization: "Prince Of Wales' College",
     period: "2021",
@@ -215,7 +223,7 @@ export const EXPERIENCE = [
     icon: "Flask"
   },
   {
-    id: 3,
+    id: 4,
     title: "President - Christian Society",
     organization: "Prince Of Wales' College",
     period: "2020-2021", 
@@ -223,7 +231,7 @@ export const EXPERIENCE = [
     icon: "Cross"
   },
   {
-    id: 4,
+    id: 5,
     title: "Cricket Team Member",
     organization: "Prince Of Wales' College",
     period: "U13, U15, U17",
