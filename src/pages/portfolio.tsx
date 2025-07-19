@@ -12,6 +12,7 @@ import { Timeline } from "@/components/ui/timeline";
 import { Chatbot } from "@/components/ui/chatbot";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { AnimatedBackground } from "@/components/ui/animated-background";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@/shared/schema";
@@ -154,7 +155,10 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative">
+      {/* Animated Star Background */}
+      <AnimatedBackground />
+      
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
       
@@ -236,7 +240,7 @@ export default function Portfolio() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+      <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative z-10">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -340,7 +344,7 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -390,7 +394,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative z-10">
         <motion.div 
           initial="initial"
           whileInView="animate"
@@ -459,7 +463,7 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial="initial"
           whileInView="animate"
@@ -526,7 +530,7 @@ export default function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative z-10">
         <motion.div 
           initial="initial"
           whileInView="animate"
@@ -549,7 +553,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial="initial"
           whileInView="animate"
@@ -658,7 +662,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative z-10">
         <motion.div 
           initial="initial"
           whileInView="animate"
@@ -844,7 +848,7 @@ export default function Portfolio() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border"
+        className="py-8 px-4 sm:px-6 lg:px-8 border-t border-border relative z-10"
       >
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-muted-foreground mb-4">
