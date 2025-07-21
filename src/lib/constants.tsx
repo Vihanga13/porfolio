@@ -74,11 +74,11 @@ export const PROJECTS = [
     id: 6,
     title: "TASK MANAGEMENT MOBILE APP",
     type: "Solo Project",
-    description: "Productivity mobile app for task and project management with real-time collaboration features. Built with React Native and Node.js backend, featuring drag-and-drop task boards, team messaging, file sharing, and progress analytics with clean, intuitive UI design.",
+    description: "Currently developing a productivity mobile app for task and project management with real-time collaboration features. Building with React Native and Node.js backend, featuring drag-and-drop task boards, team messaging, file sharing, and progress analytics with clean, intuitive UI design.",
     technologies: ["React Native", "Node.js", "MongoDB", "Socket.io", "JWT", "Express"],
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     github: "https://github.com/Vihanga13/task-management-app",
-    status: "Completed"
+    status: "In Development"
   },
   {
     id: 7,
