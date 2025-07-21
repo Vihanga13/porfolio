@@ -12,7 +12,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Timeline } from "@/components/ui/timeline";
 import { Chatbot } from "@/components/ui/chatbot";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { AnimatedBackground } from "@/components/ui/animated-background";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -160,9 +159,6 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background text-foreground relative">
       {/* Animated Star Background */}
       <AnimatedBackground />
-      
-      {/* Scroll Progress Indicator */}
-      <ScrollProgress />
       
       {/* Navigation */}
       <motion.nav 
