@@ -277,11 +277,11 @@ export default function Portfolio() {
               variants={fadeInUp}
               className="flex justify-center mb-6"
             >
-              <Badge className="bg-primary text-primary-foreground px-6 py-2 text-base font-medium flex items-center gap-2">
+              <Badge className="bg-primary text-primary-foreground px-6 py-2 text-base font-medium flex items-center gap-3">
                 <img 
                   src={companyLogo} 
                   alt="Prime 1 Logo" 
-                  className="w-5 h-5 object-contain bg-white rounded px-1"
+                  className="w-6 h-6 object-contain bg-white rounded-sm p-1 border border-gray-300"
                 />
                 Currently at Altitude1 (PVT) LTD
               </Badge>
@@ -591,7 +591,7 @@ export default function Portfolio() {
                   <CardContent className="p-6">
                     <div className="flex items-start mb-4">
                       {isCurrent ? (
-                        <div className="h-8 w-8 mr-3 mt-1 rounded bg-white p-1 border border-gray-200">
+                        <div className="h-10 w-10 mr-3 mt-1 rounded-md bg-white p-2 border-2 border-gray-300 shadow-sm">
                           <img 
                             src={companyLogo} 
                             alt="Prime 1 Logo" 
