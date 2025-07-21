@@ -482,7 +482,7 @@ export default function Portfolio() {
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
               >
-                {showAllProjects ? "Show Less" : `See More Projects (${PROJECTS.length - 6} more)`}
+                {showAllProjects ? "Show Less" : "See More Projects"}
               </Button>
             </div>
           )}
