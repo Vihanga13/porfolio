@@ -30,6 +30,16 @@ export const PROJECTS = [
   },
   {
     id: 2,
+    title: "ECHO SPACE",
+    type: "Group Project",
+    description: "Web-based interior design visualization platform developed for university coursework project under the PUSL3122 module. The application allows designers to create and customize room layouts with real-time 2D and 3D visualization using React.js, TypeScript, and three.js. Features secure user authentication, interactive dashboard, drag-and-drop furniture arrangement, and cloud-based data storage via Firebase.",
+    technologies: ["React.js", "TypeScript", "Three.js", "Tailwind CSS", "Firebase", "3D Visualization", "UI/UX Design"],
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    github: "https://github.com/Vihanga13/Group55-EchoSpace.git",
+    demo: "https://youtu.be/5VNVW7u0i-c"
+  },
+  {
+    id: 3,
     title: "MEDSYNC",
     type: "Group Project",
     description: "Medical Information Management System (MIMS) with QR code identification using PyQt5, Firebase Realtime Database, and OpenCV2 to modernize public healthcare. Through literature review and user-centered design, it enhances patient data management, workflow efficiency, and compliance.",
@@ -38,7 +48,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/MedSync"
   },
   {
-    id: 3,
+    id: 4,
     title: "TASK MANAGEMENT MOBILE APP",
     type: "Solo Project",
     description: "Productivity mobile app for task and project management with real-time collaboration features. Built with React Native and Node.js backend, featuring drag-and-drop task boards, team messaging, file sharing, and progress analytics with clean, intuitive UI design.",
@@ -47,7 +57,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/task-management-app"
   },
   {
-    id: 4,
+    id: 5,
     title: "GREEN STAY",
     type: "Group Project", 
     description: "Platform tailored for NSBM students to facilitate hostel searches in Homagama. It employs HTML, CSS, and JavaScript for frontend development, PHP for backend operations, and MySQL for database management. Additionally, it integrates Google Maps API for mapping features.",
@@ -56,7 +66,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/GreenStay"
   },
   {
-    id: 5,
+    id: 6,
     title: "GREEN RIDE",
     type: "Group Project",
     description: "Transportation app for NSBM Green University that streamlines commuting by providing public transport details and facilitating carpooling. Built with Dart and Flutter, it leverages Firebase for backend services and GitHub for collaboration.",
@@ -65,7 +75,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/GreenRide"
   },
   {
-    id: 6,
+    id: 7,
     title: "CALCULATOR",
     type: "Solo Project",
     description: "Created a calculator application with complete functionality with the Tkinter framework and Python. The calculator can do brackets and percentage calculations in addition to standard arithmetic operations like addition, subtraction, multiplication, and division.",
@@ -74,7 +84,7 @@ export const PROJECTS = [
     github: "https://github.com/Vihanga13/Calculator"
   },
   {
-    id: 7,
+    id: 8,
     title: "WEATHER APP",
     type: "Solo Project",
     description: "Using Python and the OpenWeatherMap API, an interactive weather forecast application was created that offers real-time weather information for any given area. Features include temperature, humidity, wind speed, and comprehensive weather descriptions with error handling.",

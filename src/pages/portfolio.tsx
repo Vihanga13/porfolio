@@ -29,6 +29,7 @@ import {
   Download,
   Users,
   User,
+  ExternalLink,
   RefreshCw,
   Brain,
   Clock,
@@ -437,7 +438,7 @@ export default function Portfolio() {
                         </Badge>
                       ))}
                     </div>
-                      <div className="flex items-center">
+                      <div className="flex items-center gap-4">
                       <a 
                         href={project.github}
                         target="_blank"
@@ -447,6 +448,17 @@ export default function Portfolio() {
                         <Github className="h-4 w-4 mr-1" />
                         View Code
                       </a>
+                      {project.demo && (
+                        <a 
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-1" />
+                          Demo Video
+                        </a>
+                      )}
                     </div>
                   </div>
                 </CardContent>
