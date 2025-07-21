@@ -424,7 +424,11 @@ export default function Portfolio() {
                         <span className="text-sm text-muted-foreground">{project.type}</span>
                       </div>
                       {project.status && (
-                        <Badge className="bg-orange-500 text-white text-xs">
+                        <Badge className={`text-white text-xs ${
+                          project.status === "In Development" 
+                            ? "bg-orange-500" 
+                            : "bg-green-500"
+                        }`}>
                           {project.status}
                         </Badge>
                       )}
