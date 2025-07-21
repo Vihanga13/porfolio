@@ -6,7 +6,6 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { MessageSquare, Send, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { ScrollArea } from "@/components/ui/scroll-area"
 
 interface Message {
   role: "user" | "assistant";
@@ -22,7 +21,15 @@ export function Chatbot() {
     },
   ]);
   const [input, setInput] = React.useState("");
-  const scrollAreaRef = React.useRef<HTMLDivElement>(null);
+  const messagesEndRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  React.useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   const getBotResponse = (message: string): string => {
     const lowerMsg = message.toLowerCase();
@@ -34,17 +41,17 @@ export function Chatbot() {
     
     // Skills related queries
     if (lowerMsg.includes("skill") || lowerMsg.includes("technologies") || lowerMsg.includes("programming")) {
-      return "I'm skilled in:\n\n• Programming: C, C#, Python, JavaScript, PHP\n• Web Tech: React, MERN Stack, Node.js\n• Mobile Dev: React Native, Flutter\n• Tools: MySQL, Firebase, Figma\n\nI also have strong soft skills in teamwork, adaptability, and problem-solving.";
+      return "I'm skilled in:\n\n• Programming: C, C#, Python, JavaScript, PHP, TypeScript, Dart\n• Web Tech: React, MERN Stack, Node.js, Express.js\n• Mobile Dev: React Native, Flutter\n• Databases: MySQL, Firebase, MongoDB\n• Tools: Figma, PowerBI, OpenCV\n\nI also have strong soft skills in teamwork, adaptability, and problem-solving.";
     }
     
     // Project related queries
     if (lowerMsg.includes("project") || lowerMsg.includes("work") || lowerMsg.includes("portfolio")) {
-      return "Here are some of my key projects:\n\n1. MIMS - Medical Information Management System using PyQt5 & Firebase\n2. GREEN STAY - Hostel finding platform with PHP & MySQL\n3. GREEN RIDE - Transportation app using Flutter & Firebase\n\nWould you like to know more about any specific project?";
+      return "Here are some of my key projects:\n\n1. INTERN PROGRESS TRACKER - Flutter mobile app (In Development)\n2. AI-DRIVEN NUTRITIOUS APP - ML-powered nutrition app\n3. FLIXORA - Cinema ticket booking system\n4. ECHO SPACE - 3D interior design platform\n5. MEDSYNC - Medical information management\n\nWould you like to know more about any specific project?";
     }
     
     // Contact related queries
     if (lowerMsg.includes("contact") || lowerMsg.includes("email") || lowerMsg.includes("phone") || lowerMsg.includes("reach")) {
-      return "You can reach me through:\n\n• Email: vihaax23@gmail.com\n• Phone: +94 712 547 892\n• LinkedIn: www.linkedin.com/in/vihanga-nilusha\n• GitHub: github.com/Vihanga13";
+      return "You can reach me through:\n\n• Email: vihaax23@gmail.com\n• Phone: +94 712 547 892\n• LinkedIn: https://www.linkedin.com/in/vihanga-nilusha\n• GitHub: https://github.com/Vihanga13\n• Instagram: https://www.instagram.com/kaluuu.";
     }
     
     // Location related queries
@@ -54,16 +61,21 @@ export function Chatbot() {
     
     // About me queries
     if (lowerMsg.includes("about") || lowerMsg.includes("who") || lowerMsg.includes("background")) {
-      return "I'm Vihanga Nilusha, a Computer Science undergraduate passionate about web and mobile development. I have hands-on experience with various technologies and frameworks. I focus on creating innovative digital solutions and am always eager to learn and grow in the field.";
+      return "I'm Vihanga Nilusha, a Computer Science undergraduate and Junior Web Developer at Altitude1 (PVT) LTD. I'm passionate about web and mobile development with hands-on experience in various technologies. I focus on creating innovative digital solutions and am always eager to learn and grow.";
     }
 
     // Experience related queries
     if (lowerMsg.includes("experience") || lowerMsg.includes("work experience") || lowerMsg.includes("leadership")) {
-      return "My experience includes:\n\n• Senior Prefect at Prince Of Wales' College\n• Vice President of Science Society\n• President of Christian Society\n• Cricket Team Member (U13, U15, U17)\n\nI have leadership experience in student organizations and a track record of successful project delivery.";
+      return "My experience includes:\n\n• Junior Web Developer at Altitude1 (PVT) LTD (Current)\n• Senior Prefect at Prince Of Wales' College\n• Vice President of Science Society\n• President of Christian Society\n• Cricket Team Member (U13, U15, U17)\n\nI have leadership experience and a track record of successful project delivery.";
+    }
+
+    // Work/job related queries
+    if (lowerMsg.includes("job") || lowerMsg.includes("current work") || lowerMsg.includes("company")) {
+      return "I'm currently working as a Junior Web Developer at Altitude1 (PVT) LTD since June 2025. I'm building meaningful web experiences and contributing to impactful projects while enhancing my skills in modern web development technologies.";
     }
     
     // Default response for unmatched queries
-    return "I can help you learn about Vihanga's education, skills, projects, or how to contact him. What specific information are you looking for?";
+    return "I can help you learn about Vihanga's education, skills, projects, experience, or how to contact him. What specific information are you looking for?";
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -87,33 +99,28 @@ export function Chatbot() {
     setInput("");
   };
 
-  React.useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
-    }
-  }, [messages]);
-
   return (
     <>
       {/* Floating button */}
       <Button
-        className={cn(          "fixed bottom-4 right-4 rounded-full p-7 shadow-lg scale-110",
-          !isOpen && "bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:scale-[1.2]",
+        className={cn(
+          "fixed bottom-4 right-4 rounded-full p-3 shadow-lg z-50 transition-all duration-300",
+          !isOpen && "bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:scale-110",
           isOpen && "bg-muted hover:bg-muted"
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <X className="h-12 w-12" /> : <MessageSquare className="h-12 w-12" />}
+        {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
       </Button>
 
       {/* Chat window */}
       {isOpen && (
-        <Card className="fixed bottom-24 right-4 w-[400px] h-[500px] shadow-xl border-primary/10">
+        <Card className="fixed bottom-20 right-4 w-[400px] h-[500px] shadow-xl border-primary/10 z-40">
           <CardHeader className="bg-gradient-to-r from-primary to-secondary text-primary-foreground p-4">
             <div className="font-semibold">Chat with AI Assistant</div>
           </CardHeader>
-          <ScrollArea className="h-[380px] p-4" ref={scrollAreaRef}>
-            <CardContent className="space-y-4">
+          <div className="h-[380px] overflow-y-auto p-4">
+            <CardContent className="space-y-4 p-0">
               {messages.map((message, index) => (
                 <div
                   key={index}
@@ -127,8 +134,9 @@ export function Chatbot() {
                   {message.content}
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </CardContent>
-          </ScrollArea>
+          </div>
           <CardFooter className="p-4 pt-2 border-t">
             <form onSubmit={handleSubmit} className="flex w-full gap-2">
               <Input
@@ -137,8 +145,8 @@ export function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 className="flex-1"
               />
-              <Button type="submit" size="icon" className="bg-primary hover:bg-primary/90 p-6">
-                <Send className="h-6 w-6" />
+              <Button type="submit" size="icon" className="bg-primary hover:bg-primary/90">
+                <Send className="h-4 w-4" />
               </Button>
             </form>
           </CardFooter>
