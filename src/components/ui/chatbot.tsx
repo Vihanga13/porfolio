@@ -104,14 +104,14 @@ export function Chatbot() {
       {/* Floating button */}
       <Button
         className={cn(
-          "fixed bottom-4 right-4 rounded-full p-3 shadow-lg z-50 transition-all duration-300",
+          "fixed bottom-4 right-4 rounded-full p-4 shadow-lg z-50 transition-all duration-300",
           !isOpen && "bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:scale-110",
           isOpen && "bg-muted hover:bg-muted"
         )}
         onClick={() => setIsOpen(!isOpen)}
         type="button"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
+        {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
       </Button>
 
       {/* Chat window */}
