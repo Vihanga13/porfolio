@@ -109,6 +109,7 @@ export function Chatbot() {
           isOpen && "bg-muted hover:bg-muted"
         )}
         onClick={() => setIsOpen(!isOpen)}
+        type="button"
       >
         {isOpen ? <X className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
       </Button>
@@ -117,7 +118,18 @@ export function Chatbot() {
       {isOpen && (
         <Card className="fixed bottom-20 right-4 w-[400px] h-[500px] shadow-xl border-primary/10 z-40">
           <CardHeader className="bg-gradient-to-r from-primary to-secondary text-primary-foreground p-4">
-            <div className="font-semibold">Chat with AI Assistant</div>
+            <div className="flex justify-between items-center">
+              <div className="font-semibold">Chat with AI Assistant</div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsOpen(false)}
+                className="text-primary-foreground hover:bg-white/10 p-1 h-auto"
+                type="button"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </div>
           </CardHeader>
           <div className="h-[380px] overflow-y-auto p-4">
             <CardContent className="space-y-4 p-0">
