@@ -11,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Timeline } from "@/components/ui/timeline";
 import { Chatbot } from "@/components/ui/chatbot";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { AnimatedBackground } from "@/components/ui/animated-background";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -198,14 +197,12 @@ export default function Portfolio() {
               <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors duration-300">
                 Contact
               </button>
-              <ThemeToggle />
             </div>
             
             <button 
-              className="md:hidden text-foreground flex items-center space-x-2"
+              className="md:hidden text-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <ThemeToggle />
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
