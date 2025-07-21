@@ -275,20 +275,8 @@ export default function Portfolio() {
               variants={fadeInUp}
               className="flex justify-center mb-6"
             >
-              <div className="relative">
-                <Badge className="bg-gradient-to-r from-slate-700 via-slate-600 to-gray-700 text-white px-6 py-3 text-base font-bold shadow-lg ring-4 ring-slate-500/20">
-                  ✨ CURRENTLY WORKING AT ALTITUDE1 (PVT) LTD ✨
-                </Badge>
-                <div className="absolute -inset-1 bg-gradient-to-r from-slate-600 via-slate-500 to-gray-600 rounded-full blur opacity-20"></div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              variants={fadeInUp}
-              className="flex justify-center mb-6"
-            >
-              <Badge className="bg-slate-100 text-slate-700 border-2 border-slate-300 px-4 py-2 text-sm font-semibold">
-                🚀 Started in June 2025 - Fresh & Excited!
+              <Badge className="bg-primary text-primary-foreground px-6 py-2 text-base font-medium">
+                Currently at Altitude1 (PVT) LTD
               </Badge>
             </motion.div>
             
@@ -574,85 +562,36 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-8">
             {EXPERIENCE.map((exp, index) => {
               const IconComponent = iconMap[exp.icon as keyof typeof iconMap];
-              const isNew = index === 0; // First item is the new role
+              const isCurrent = index === 0; // First item is the current role
               return (
                 <Card 
                   key={exp.id} 
-                  className={`glass-card transition-all duration-500 transform hover:scale-102 ${
-                    isNew 
-                      ? 'border-4 border-green-400 bg-gradient-to-br from-green-50 to-blue-50 shadow-2xl ring-4 ring-green-200 relative overflow-hidden' 
-                      : 'border-primary/10 hover:shadow-lg'
+                  className={`glass-card transition-all duration-300 hover:shadow-lg ${
+                    isCurrent ? 'border-2 border-primary bg-primary/5' : 'border-border'
                   }`}
                 >
-                  {isNew && (
-                    <>
-                      <div className="absolute top-0 right-0 w-0 h-0 border-l-[60px] border-l-transparent border-t-[60px] border-t-green-500"></div>
-                      <div className="absolute top-2 right-2 text-white text-xs font-bold transform rotate-45">
-                        NEW
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 via-primary/10 to-secondary/10 animate-pulse"></div>
-                    </>
-                  )}
-                  
-                  <CardContent className={`p-6 relative z-10 ${isNew ? 'bg-white/80 backdrop-blur-sm rounded-lg m-2' : ''}`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center">
-                        <IconComponent className={`h-8 w-8 mr-4 ${isNew ? 'text-green-600 animate-bounce' : 'text-primary'}`} />
-                        <div>
-                          <div className="flex items-center gap-2 mb-1">
-                            <h3 className={`text-xl font-bold ${isNew ? 'text-green-700 text-2xl' : ''}`}>
-                              {exp.title}
-                            </h3>
-                            {isNew && (
-                              <div className="flex gap-2">
-                                <Badge className="bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold animate-bounce">
-                                  🔥 CURRENT
-                                </Badge>
-                                <Badge className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-bold animate-pulse">
-                                  ⭐ FEATURED
-                                </Badge>
-                              </div>
-                            )}
-                          </div>
-                          <p className={`${isNew ? 'text-green-600 font-semibold text-lg' : 'text-muted-foreground'}`}>
-                            {exp.organization} • {exp.period}
-                          </p>
+                  <CardContent className="p-6">
+                    <div className="flex items-start mb-4">
+                      <IconComponent className="h-6 w-6 mr-3 text-primary mt-1" />
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="text-lg font-semibold text-foreground">
+                            {exp.title}
+                          </h3>
+                          {isCurrent && (
+                            <Badge className="bg-primary text-primary-foreground text-xs">
+                              Current
+                            </Badge>
+                          )}
                         </div>
+                        <p className="text-muted-foreground text-sm">
+                          {exp.organization} • {exp.period}
+                        </p>
                       </div>
                     </div>
-                    <p className={`text-sm leading-relaxed ${isNew ? 'text-gray-700 font-medium' : 'text-muted-foreground'}`}>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
                       {exp.description}
                     </p>
-                    {isNew && (
-                      <div className="mt-6 space-y-3">
-                        <div className="p-4 bg-gradient-to-r from-green-100 to-blue-100 rounded-xl border-2 border-green-300 relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-r from-green-200/50 to-blue-200/50 animate-pulse"></div>
-                          <div className="relative z-10">
-                            <p className="text-green-800 font-bold text-center mb-2 text-lg">
-                              🎊 JUST STARTED IN JUNE 2025! 🎊
-                            </p>
-                            <p className="text-green-700 text-sm text-center font-medium">
-                              Fresh energy • New challenges • Exciting opportunities ahead!
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="text-center p-2 bg-green-50 rounded-lg border border-green-200">
-                            <div className="text-green-600 font-bold text-xs">MONTH 1</div>
-                            <div className="text-green-800 text-xs">Learning & Growing</div>
-                          </div>
-                          <div className="text-center p-2 bg-blue-50 rounded-lg border border-blue-200">
-                            <div className="text-blue-600 font-bold text-xs">CURRENT</div>
-                            <div className="text-blue-800 text-xs">Building Impact</div>
-                          </div>
-                          <div className="text-center p-2 bg-purple-50 rounded-lg border border-purple-200">
-                            <div className="text-purple-600 font-bold text-xs">FUTURE</div>
-                            <div className="text-purple-800 text-xs">Endless Potential</div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
                   </CardContent>
                 </Card>
               );

@@ -33,16 +33,16 @@ export function AnimatedBackground() {
     // Initialize stars
     const initStars = () => {
       starsRef.current = [];
-      const numStars = Math.floor((canvas.width * canvas.height) / 8000); // Density based on screen size
+      const numStars = Math.floor((canvas.width * canvas.height) / 15000); // Reduced density
       
       for (let i = 0; i < numStars; i++) {
         starsRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 3 + 1,
-          opacity: Math.random() * 0.8 + 0.2,
-          twinkleSpeed: Math.random() * 0.02 + 0.01,
-          glowIntensity: Math.random() * 0.5 + 0.3,
+          size: Math.random() * 2 + 0.5, // Smaller stars
+          opacity: Math.random() * 0.6 + 0.3, // Less variation
+          twinkleSpeed: Math.random() * 0.01 + 0.005, // Slower twinkle
+          glowIntensity: Math.random() * 0.3 + 0.2, // Reduced glow
         });
       }
     };
@@ -88,18 +88,18 @@ export function AnimatedBackground() {
       });
       
       // Add some floating particles
-      const numParticles = 20;
+      const numParticles = 8; // Reduced particles
       for (let i = 0; i < numParticles; i++) {
-        const x = (Math.sin(time * 0.5 + i) * 100) + (canvas.width / 2);
-        const y = (Math.cos(time * 0.3 + i) * 50) + (canvas.height / 2);
-        const opacity = 0.1 + Math.sin(time * 2 + i) * 0.1;
+        const x = (Math.sin(time * 0.3 + i) * 80) + (canvas.width / 2); // Slower movement
+        const y = (Math.cos(time * 0.2 + i) * 40) + (canvas.height / 2); // Slower movement
+        const opacity = 0.05 + Math.sin(time * 1.5 + i) * 0.05; // More subtle
         
-        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 20);
-        gradient.addColorStop(0, `rgba(138, 43, 226, ${opacity})`);
-        gradient.addColorStop(1, 'rgba(138, 43, 226, 0)');
+        const gradient = ctx.createRadialGradient(x, y, 0, x, y, 15); // Smaller radius
+        gradient.addColorStop(0, `rgba(99, 102, 241, ${opacity})`); // Softer color
+        gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
         
         ctx.fillStyle = gradient;
-        ctx.fillRect(x - 20, y - 20, 40, 40);
+        ctx.fillRect(x - 15, y - 15, 30, 30);
       }
 
       animationIdRef.current = requestAnimationFrame(animate);
