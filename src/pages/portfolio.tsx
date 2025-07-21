@@ -414,13 +414,20 @@ export default function Portfolio() {
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
                   <div className="p-6">
-                    <div className="flex items-center mb-2">
-                      {project.type === "Group Project" ? (
-                        <Users className="h-4 w-4 text-primary mr-2" />
-                      ) : (
-                        <User className="h-4 w-4 text-secondary mr-2" />
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center">
+                        {project.type === "Group Project" ? (
+                          <Users className="h-4 w-4 text-primary mr-2" />
+                        ) : (
+                          <User className="h-4 w-4 text-secondary mr-2" />
+                        )}
+                        <span className="text-sm text-muted-foreground">{project.type}</span>
+                      </div>
+                      {project.status && (
+                        <Badge className="bg-orange-500 text-white text-xs">
+                          {project.status}
+                        </Badge>
                       )}
-                      <span className="text-sm text-muted-foreground">{project.type}</span>
                     </div>
                     
                     <h3 className="text-xl font-semibold mb-3 text-primary">{project.title}</h3>

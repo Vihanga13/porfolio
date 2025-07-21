@@ -23,10 +23,11 @@ export const PROJECTS = [
     id: 1,
     title: "INTERN PROGRESS TRACKER",
     type: "Solo Project",
-    description: "Comprehensive cross-platform mobile application using Flutter and Dart to streamline internship management and progress tracking for educational institutions. Features robust authentication with role-based access control for interns, supervisors, and managers using Firebase Authentication. Built with Firebase Firestore for real-time data synchronization and Firebase Storage for document management, enabling seamless file upload, sharing, and collaboration capabilities. Includes advanced analytics with interactive charts, automated progress reporting, goal tracking with gamification elements, and real-time messaging system.",
+    description: "Currently developing a comprehensive cross-platform mobile application using Flutter and Dart to streamline internship management and progress tracking for educational institutions. The application will feature robust authentication with role-based access control for interns, supervisors, and managers using Firebase Authentication. Building with Firebase Firestore for real-time data synchronization and Firebase Storage for document management. Planned features include advanced analytics with interactive charts, automated progress reporting, goal tracking with gamification elements, and real-time messaging system.",
     technologies: ["Flutter", "Dart", "Firebase", "Firestore", "Firebase Auth", "Firebase Storage", "fl_chart", "Real-time Sync", "Cross-platform", "Analytics"],
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
-    github: "https://github.com/Vihanga13/intern-progress-tracker"
+    github: "https://github.com/Vihanga13/intern-progress-tracker",
+    status: "In Development"
   },
   {
     id: 2,
