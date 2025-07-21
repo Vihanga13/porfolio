@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   email: "vihaax23@gmail.com",
   phone: "+94 712 547 892",
   location: "Moratuwa, Sri Lanka",
-  linkedin: "www.linkedin.com/in/vihanga-nilusha",
+  linkedin: "https://www.linkedin.com/in/vihanga-nilusha",
   github: "https://github.com/Vihanga13",
   instagram: "https://www.instagram.com/kaluuu.",
   languages: ["Sinhala", "English"]
