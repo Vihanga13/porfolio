@@ -3,6 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import logoImage from "@/assets/logo.png";
 import portraitImage from "@/assets/nw.jpg";
+import companyLogo from "@/assets/download.png";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -275,7 +276,12 @@ export default function Portfolio() {
               variants={fadeInUp}
               className="flex justify-center mb-6"
             >
-              <Badge className="bg-primary text-primary-foreground px-6 py-2 text-base font-medium">
+              <Badge className="bg-primary text-primary-foreground px-6 py-2 text-base font-medium flex items-center gap-2">
+                <img 
+                  src={companyLogo} 
+                  alt="Prime 1 Logo" 
+                  className="w-5 h-5 object-contain bg-white rounded px-1"
+                />
                 Currently at Altitude1 (PVT) LTD
               </Badge>
             </motion.div>
@@ -572,7 +578,17 @@ export default function Portfolio() {
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start mb-4">
-                      <IconComponent className="h-6 w-6 mr-3 text-primary mt-1" />
+                      {isCurrent ? (
+                        <div className="h-8 w-8 mr-3 mt-1 rounded bg-white p-1 border border-gray-200">
+                          <img 
+                            src={companyLogo} 
+                            alt="Prime 1 Logo" 
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <IconComponent className="h-6 w-6 mr-3 text-primary mt-1" />
+                      )}
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h3 className="text-lg font-semibold text-foreground">
