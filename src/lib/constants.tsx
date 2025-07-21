@@ -34,7 +34,7 @@ export const PROJECTS = [
     type: "Group Project",
     description: "Full-stack cinema ticket booking system developed as part of the PUSL3120 coursework. Features user registration, real-time seat selection, showtime browsing, secure payment integration (PayPal with LKR-USD conversion), and admin modules for content and booking management. Emphasizes real-time interaction, modular architecture, cloud media storage (AWS S3), and extensive testing.",
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "WebSockets", "Tailwind CSS", "Docker", "GitHub Actions", "PayPal API", "AWS S3", "Jest"],
-    image: "https://images.unsplash.com/photo-1489599904178-9965d37d5c5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
     github: "https://github.com/Vihanga13/Flixora.git"
   },
   {
