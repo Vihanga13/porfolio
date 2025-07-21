@@ -1,3 +1,5 @@
+import nutritionAppImage from '../assets/Artboard 1 (1).png';
+
 export const PERSONAL_INFO = {
   name: "Vihanga Nilusha",
   title: "Junior Web Developer",
@@ -23,7 +25,7 @@ export const PROJECTS = [
     type: "Solo Project",
     description: "AI-driven nutrition app for personalized dietary management and health monitoring. Features a custom-trained machine learning model for meal recognition using Python and PyTorch, deployed via Flask API. Users can scan meal images within the Flutter app for intelligent analysis and classification, with results stored in Firebase for tracking.",
     technologies: ["Python", "PyTorch", "Flask", "Flutter", "Firebase", "Machine Learning", "Computer Vision"],
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
+    image: nutritionAppImage,
     github: "https://github.com/Vihanga13/final-one.git"
   },
   {
