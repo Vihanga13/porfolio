@@ -89,6 +89,7 @@ const scaleIn = {
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
   const { toast } = useToast();
   
   const form = useForm<InsertContact>({
@@ -405,7 +406,7 @@ export default function Portfolio() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROJECTS.map((project) => (
+            {(showAllProjects ? PROJECTS : PROJECTS.slice(0, 6)).map((project) => (
               <Card key={project.id} className="glass-card border-primary/10 group hover:scale-105 transition-all duration-300">
                 <CardContent className="p-0">
                   <img 
@@ -472,6 +473,19 @@ export default function Portfolio() {
               </Card>
             ))}
           </div>
+          
+          {/* See More Button */}
+          {PROJECTS.length > 6 && (
+            <div className="text-center mt-12">
+              <Button
+                onClick={() => setShowAllProjects(!showAllProjects)}
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
+              >
+                {showAllProjects ? "Show Less" : `See More Projects (${PROJECTS.length - 6} more)`}
+              </Button>
+            </div>
+          )}
         </motion.div>
       </section>
 
